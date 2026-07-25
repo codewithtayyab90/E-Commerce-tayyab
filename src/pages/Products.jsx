@@ -9,7 +9,7 @@ function Products(){
     const navigate = useNavigate()
    async function getProducts(){
     const res = await axios.get("http://localhost:8000/products")
-    console.log(res)
+    console.log(res.data)
     setProducts(res.data)
     }
     useEffect(()=>{
