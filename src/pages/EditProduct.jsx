@@ -32,7 +32,7 @@ function EditProduct(){
             rating: "",
             review: ""
         })
-        navigate("/")
+        navigate("/products")
         toast.success("Product updated successfully!", {
             position: "top-right",
             duration: 3000,

@@ -26,7 +26,7 @@ function Register() {
                 email:"",
                 password:"",
             })
-            navigate("/login")
+            navigate("/")
         } catch(err){
             console.log(err)
         }
@@ -77,7 +77,7 @@ function Register() {
       >
         Register
       </Button>
-      <p>Already have an account? <Link to="/login">Login here</Link></p>
+      <p>Already have an account? <Link to="/">Login here</Link></p>
     </Form>
     </div>
   );

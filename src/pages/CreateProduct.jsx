@@ -29,7 +29,7 @@ function CreateProduct(){
             rating: "",
             review: ""
         })
-        navigate("/")
+        navigate("/products")
         toast.success("Product created successfully!", {
             position: "top-right",
             duration: 3000,

@@ -12,9 +12,9 @@ function App(){
         <div>
             <BrowserRouter>
             <Routes>
-                <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/" element={<Product />} />
+                <Route path="/products" element={<Product />} />
+                <Route path="/" element={<Login />} />
                 <Route path="/create-product" element={<CreateProduct />} />
                 <Route path="/products/:id" element={<EditProduct />} />
             </Routes>

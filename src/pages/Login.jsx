@@ -23,7 +23,7 @@ function Login() {
                     email:"",
                     password:"",
                 })
-                navigate("/")
+                navigate("/products")
             } catch (err){
                 console.log(err)
             }
