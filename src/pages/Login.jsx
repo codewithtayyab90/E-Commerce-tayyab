@@ -17,7 +17,7 @@ function Login() {
         async function submitHandler(e){
             e.preventDefault();
             try{
-                const res = await axios.post("http://localhost:8000/login", authData)
+                const res = await axios.post(" https://ecom-89-code.onrender.com/login", authData)
                 console.log(res);
                 setAuthData({
                     email:"",

@@ -22,7 +22,7 @@ function EditProduct(){
     }
     async function submitHandler(e){
         e.preventDefault()
-        const res = await axios.patch(`http://localhost:8000/products/${params.id}`, product);
+        const res = await axios.patch(` https://ecom-89-code.onrender.com/products/${params.id}`, product);
         console.log("Patch response:", res.status, res.data);
         console.log("Product data after patch:");
         setProduct({
@@ -39,7 +39,7 @@ function EditProduct(){
           });
     }
  async function getProductById(){
-        const res = await axios.get(`http://localhost:8000/products/${params.id}`)
+        const res = await axios.get(` https://ecom-89-code.onrender.com/products/${params.id}`)
         console.log(res.data)
         setProduct(res.data)
     }
