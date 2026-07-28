@@ -3,6 +3,7 @@ import {Form, Button} from "react-bootstrap"
 import axios from "axios"
 import {useNavigate} from "react-router-dom"
 import toast, { Toaster } from 'react-hot-toast'
+import BASE_URL from "../config/api.js"
 
 function CreateProduct(){
     const [product, setProduct] = useState({
@@ -20,7 +21,7 @@ function CreateProduct(){
     }
     async function submitHandler(e){
         e.preventDefault()
-        const res = await axios.post("https://ecom-89-code.onrender.com/products/create", product)
+        const res = await axios.post(`${BASE_URL}/products/create`, product)
         console.log(res)
         setProduct({
             title: "",
@@ -86,13 +87,13 @@ function CreateProduct(){
                  name="review"
                  onChange={changeHandler} />
                </Form.Group>
-             </Form>
              <Button 
              variant="success"
              type="submit"
              onClick={submitHandler}>
                 Submit
              </Button>
+             </Form>
             </div>
         </div>
     )

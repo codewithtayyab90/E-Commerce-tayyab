@@ -3,6 +3,8 @@ import {Form, Button} from "react-bootstrap"
 import axios from "axios"
 import {useNavigate, useParams} from "react-router-dom"
 import toast, { Toaster } from 'react-hot-toast'
+import BASE_URL from "../config/api.js"
+
 
 function EditProduct(){
     const [product, setProduct] = useState({
@@ -22,7 +24,7 @@ function EditProduct(){
     }
     async function submitHandler(e){
         e.preventDefault()
-        const res = await axios.patch(`https://ecom-89-code.onrender.com/products/${params.id}`, product);
+        const res = await axios.patch(`${BASE_URL}/products/${params.id}`, product);
         console.log("Patch response:", res.status, res.data);
         console.log("Product data after patch:");
         setProduct({
@@ -39,7 +41,7 @@ function EditProduct(){
           });
     }
  async function getProductById(){
-        const res = await axios.get(`https://ecom-89-code.onrender.com/products/${params.id}`)
+        const res = await axios.get(`${BASE_URL}/products/${params.id}`)
         console.log(res.data)
         setProduct(res.data)
     }
@@ -85,7 +87,7 @@ function EditProduct(){
                  type="number"
                  placeholder="Enter rating"
                  value={product.rating}
-                 name="rating "
+                 name="rating"
                  onChange={changeHandler} />
                </Form.Group>
                <Form.Group className="mb-3" controlId="exampleForm.ControlInput4">

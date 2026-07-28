@@ -3,12 +3,14 @@ import {Button, Card} from "react-bootstrap"
 import {useNavigate} from "react-router-dom"
 import axios from "axios"
 import toast, { Toaster } from 'react-hot-toast'
+import BASE_URL from "../config/api.js"
+
 
 function Products(){
     const [product, setProducts] =useState ([]);
     const navigate = useNavigate()
    async function getProducts(){
-    const res = await axios.get("https://ecom-89-code.onrender.com/products")
+    const res = await axios.get(`${BASE_URL}/products`)
     console.log(res.data)
     setProducts(res.data)
     }
@@ -16,7 +18,7 @@ function Products(){
         getProducts()
     },[])
     async function deleteProducts(id){
-        const res = await axios.delete(`https://ecom-89-code.onrender.com/products/${id}`) 
+        const res = await axios.delete(`${BASE_URL}/products/${id}`) 
         const singleProduct = product.filter((mereProduct) => mereProduct._id !== id)
         setProducts(singleProduct)
         toast.success("Product   deleted successfully!", {

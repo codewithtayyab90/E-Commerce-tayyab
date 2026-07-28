@@ -3,6 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import {useState} from "react"
 import axios from "axios"
+import BASE_URL from "../config/api.js"
 
 function Register() {
     const [authData, setAuthData] = useState({
@@ -19,7 +20,7 @@ function Register() {
     async function submitHandler(e){
         e.preventDefault();
         try{
-            const res = await axios.post("https://ecom-89-code.onrender.com/register", authData)
+            const res = await axios.post(`${BASE_URL}/register`, authData)
             console.log(res);
             setAuthData({
                 username:"",
